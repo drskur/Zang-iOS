@@ -17,6 +17,7 @@
 		0F580C441EF7C88500ABD0B0 /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = 0F580C431EF7C88500ABD0B0 /* Cartfile */; };
 		0F580C481EF7C98F00ABD0B0 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F580C471EF7C98F00ABD0B0 /* Alamofire.framework */; };
 		0F580C4A1EF7CBC700ABD0B0 /* Kanna.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F580C491EF7CBC700ABD0B0 /* Kanna.framework */; };
+		0FD3192C1EF7F16A0097BF9F /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 0FD3192B1EF7F16A0097BF9F /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		0F580C431EF7C88500ABD0B0 /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
 		0F580C471EF7C98F00ABD0B0 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		0F580C491EF7CBC700ABD0B0 /* Kanna.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kanna.framework; path = Carthage/Build/iOS/Kanna.framework; sourceTree = "<group>"; };
+		0FD3192B1EF7F16A0097BF9F /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +87,7 @@
 		0F580C091EF7C71700ABD0B0 = {
 			isa = PBXGroup;
 			children = (
+				0FD3192B1EF7F16A0097BF9F /* README.md */,
 				0F580C431EF7C88500ABD0B0 /* Cartfile */,
 				0F580C141EF7C71700ABD0B0 /* Zang */,
 				0F580C291EF7C71700ABD0B0 /* ZangTests */,
@@ -298,6 +301,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0FD3192C1EF7F16A0097BF9F /* README.md in Sources */,
 				0F580C181EF7C71700ABD0B0 /* ViewController.swift in Sources */,
 				0F580C161EF7C71700ABD0B0 /* AppDelegate.swift in Sources */,
 			);
@@ -554,6 +558,7 @@
 				0F580C3C1EF7C71700ABD0B0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0F580C3D1EF7C71700ABD0B0 /* Build configuration list for PBXNativeTarget "ZangTests" */ = {
 			isa = XCConfigurationList;
@@ -562,6 +567,7 @@
 				0F580C3F1EF7C71700ABD0B0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0F580C401EF7C71700ABD0B0 /* Build configuration list for PBXNativeTarget "ZangUITests" */ = {
 			isa = XCConfigurationList;
@@ -570,6 +576,7 @@
 				0F580C421EF7C71700ABD0B0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
