@@ -14,6 +14,9 @@
 		0F580C201EF7C71700ABD0B0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F580C1E1EF7C71700ABD0B0 /* LaunchScreen.storyboard */; };
 		0F580C2B1EF7C71700ABD0B0 /* ZangTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F580C2A1EF7C71700ABD0B0 /* ZangTests.swift */; };
 		0F580C361EF7C71700ABD0B0 /* ZangUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F580C351EF7C71700ABD0B0 /* ZangUITests.swift */; };
+		0F580C441EF7C88500ABD0B0 /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = 0F580C431EF7C88500ABD0B0 /* Cartfile */; };
+		0F580C481EF7C98F00ABD0B0 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F580C471EF7C98F00ABD0B0 /* Alamofire.framework */; };
+		0F580C4A1EF7CBC700ABD0B0 /* Kanna.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F580C491EF7CBC700ABD0B0 /* Kanna.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +50,9 @@
 		0F580C311EF7C71700ABD0B0 /* ZangUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZangUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F580C351EF7C71700ABD0B0 /* ZangUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZangUITests.swift; sourceTree = "<group>"; };
 		0F580C371EF7C71700ABD0B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0F580C431EF7C88500ABD0B0 /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
+		0F580C471EF7C98F00ABD0B0 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		0F580C491EF7CBC700ABD0B0 /* Kanna.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kanna.framework; path = Carthage/Build/iOS/Kanna.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +60,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F580C4A1EF7CBC700ABD0B0 /* Kanna.framework in Frameworks */,
+				0F580C481EF7C98F00ABD0B0 /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,10 +85,12 @@
 		0F580C091EF7C71700ABD0B0 = {
 			isa = PBXGroup;
 			children = (
+				0F580C431EF7C88500ABD0B0 /* Cartfile */,
 				0F580C141EF7C71700ABD0B0 /* Zang */,
 				0F580C291EF7C71700ABD0B0 /* ZangTests */,
 				0F580C341EF7C71700ABD0B0 /* ZangUITests */,
 				0F580C131EF7C71700ABD0B0 /* Products */,
+				0F580C461EF7C98F00ABD0B0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -125,6 +135,15 @@
 			path = ZangUITests;
 			sourceTree = "<group>";
 		};
+		0F580C461EF7C98F00ABD0B0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0F580C491EF7CBC700ABD0B0 /* Kanna.framework */,
+				0F580C471EF7C98F00ABD0B0 /* Alamofire.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,6 +154,7 @@
 				0F580C0E1EF7C71700ABD0B0 /* Sources */,
 				0F580C0F1EF7C71700ABD0B0 /* Frameworks */,
 				0F580C101EF7C71700ABD0B0 /* Resources */,
+				0F580C451EF7C90300ABD0B0 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -234,6 +254,7 @@
 			files = (
 				0F580C201EF7C71700ABD0B0 /* LaunchScreen.storyboard in Resources */,
 				0F580C1D1EF7C71700ABD0B0 /* Assets.xcassets in Resources */,
+				0F580C441EF7C88500ABD0B0 /* Cartfile in Resources */,
 				0F580C1B1EF7C71700ABD0B0 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -253,6 +274,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0F580C451EF7C90300ABD0B0 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 8;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Kanna.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		0F580C0E1EF7C71700ABD0B0 /* Sources */ = {
@@ -414,6 +453,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Zang/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.me.drskur.Zang;
@@ -426,6 +469,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Zang/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.me.drskur.Zang;
