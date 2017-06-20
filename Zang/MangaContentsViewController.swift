@@ -21,10 +21,16 @@ class MangaContentsViewController: UIViewController, UIPageViewControllerDataSou
         super.viewDidLoad()
 
         self.navigationItem.title = mangaItem.title
+        self.navigationController?.hidesBarsOnTap = true
+        self.navigationController?.isNavigationBarHidden = true
         
         mangaContent = realm.objects(MangaContent.self).filter("mangaItem == %@", mangaItem)
         
-        pageVC.view.frame = CGRect(x: 0, y: 30, width: self.view.frame.size.width, height: self.view.frame.size.height - 30)
+        setupPageViewController()
+    }
+    
+    func setupPageViewController() {
+        pageVC.view.frame = self.view.frame
         
         
         if mangaContent.isEmpty {
@@ -40,16 +46,6 @@ class MangaContentsViewController: UIViewController, UIPageViewControllerDataSou
         self.view.addSubview(pageVC.view)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
     
     // MARK: - Page View Controller
     
