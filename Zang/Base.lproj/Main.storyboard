@@ -82,10 +82,63 @@
                             <outlet property="delegate" destination="Gdl-ra-MTv" id="MRo-Oi-uyb"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <segue destination="sgj-7I-DTs" kind="show" identifier="ShowMangaContents" id="umn-VS-Czg"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hAf-fu-Mj3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1793" y="-18"/>
+        </scene>
+        <!--Manga Contents View Controller-->
+        <scene sceneID="gPO-Nw-jHh">
+            <objects>
+                <viewController id="sgj-7I-DTs" customClass="MangaContentsViewController" customModule="Zang" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="zbs-dU-VEe"/>
+                        <viewControllerLayoutGuide type="bottom" id="fjq-Cl-a6M"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Nl2-6r-3Pk">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kFa-c0-mDl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2588" y="-18"/>
+        </scene>
+        <!--Content View Controller-->
+        <scene sceneID="HM2-im-M5s">
+            <objects>
+                <viewController storyboardIdentifier="MangaContents" useStoryboardIdentifierAsRestorationIdentifier="YES" id="YNQ-mm-lmd" customClass="ContentViewController" customModule="Zang" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="t2z-5f-RGm"/>
+                        <viewControllerLayoutGuide type="bottom" id="vBe-jS-gJK"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Zvc-Hf-un0">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lLX-vo-bpF">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="vBe-jS-gJK" firstAttribute="top" secondItem="lLX-vo-bpF" secondAttribute="bottom" id="Slx-dM-j4f"/>
+                            <constraint firstItem="lLX-vo-bpF" firstAttribute="top" secondItem="Zvc-Hf-un0" secondAttribute="top" id="h6Z-WY-5BM"/>
+                            <constraint firstAttribute="trailing" secondItem="lLX-vo-bpF" secondAttribute="trailing" id="h7v-Fm-YOR"/>
+                            <constraint firstItem="lLX-vo-bpF" firstAttribute="leading" secondItem="Zvc-Hf-un0" secondAttribute="leading" id="r19-uT-ecW"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="lLX-vo-bpF" id="CoV-jX-ewm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7RB-cu-CVp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3312.8000000000002" y="-18.440779610194905"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="JuN-V2-W7a">

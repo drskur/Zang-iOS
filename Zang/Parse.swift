@@ -50,3 +50,13 @@ func extractMangaItem(html: String) -> [(Title, MangaItemURL)] {
     
     return []
 }
+
+func extractMangaContent(html: String) -> [String] {
+    if let doc = HTML(html: html, encoding: .utf8) {
+        return doc.css("#post .contents img").map({ (elm) -> String in
+            return elm["src"]!
+        })
+    }
+    
+    return []
+}
