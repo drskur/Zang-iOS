@@ -90,7 +90,7 @@
             </objects>
             <point key="canvasLocation" x="1793" y="-18"/>
         </scene>
-        <!--Manga Contents View Controller-->
+        <!--Title-->
         <scene sceneID="gPO-Nw-jHh">
             <objects>
                 <viewController id="sgj-7I-DTs" customClass="MangaContentsViewController" customModule="Zang" customModuleProvider="target" sceneMemberID="viewController">
@@ -103,6 +103,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Title" id="bn9-bh-pjD">
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="zoE-gd-gTh">
+                            <connections>
+                                <action selector="pressedDirectionButton:" destination="sgj-7I-DTs" id="6Vd-1P-LYz"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="directionButton" destination="zoE-gd-gTh" id="TM8-LH-C41"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kFa-c0-mDl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

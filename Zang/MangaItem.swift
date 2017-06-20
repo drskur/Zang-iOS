@@ -16,6 +16,7 @@ class MangaItem: Object {
     dynamic var manga: Manga!
     dynamic var title = ""
     dynamic var url = ""
+    dynamic var isMangaDirection = false
 }
 
 func fetchMangaItemList(manga: Manga) -> Observable<[(Title, MangaURL)]> {

@@ -14,6 +14,11 @@ class MangaItemListTableViewController: UITableViewController {
     var manga: Manga!
     let realm = try! Realm()
     var mangaItems: Results<MangaItem>!
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.hidesBarsOnTap = false
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()

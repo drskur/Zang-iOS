@@ -10,10 +10,10 @@ import UIKit
 
 class ContentViewController: UIViewController {
     
+    var mangaContent: MangaContent!
+    
     var pageIndex: Int!
     var pageSecondIndex: Int!
-    var mangaContent: MangaContent?
-    var backward = false
     
     var splitImages: [UIImage]?
     
@@ -24,17 +24,13 @@ class ContentViewController: UIViewController {
         super.viewDidLoad()
 
         if let images = self.splitImages {
-            self.imageView.image = images[self.pageSecondIndex - 1]
+            self.imageView.image = images[self.pageSecondIndex]
         } else {
-            let _ = loadMangaContent(url: mangaContent!.imageUrl)
+            let _ = loadMangaContent(url: mangaContent.imageUrl)
                 .subscribe(onNext: { (image) in
                     if image.size.width > image.size.height {
                         self.splitImages = self.splitImage(image: image)
-                        if self.backward {
-                            self.imageView.image = self.splitImages![1]
-                        } else {
-                            self.imageView.image = self.splitImages![self.pageSecondIndex - 1]
-                        }
+                        self.imageView.image = self.splitImages![self.pageSecondIndex]
                     } else {
                         self.imageView.image = image
                     }

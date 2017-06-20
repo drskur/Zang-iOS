@@ -9,6 +9,7 @@
 import UIKit
 import RealmSwift
 import Alamofire
+import RxSwift
 
 class MangaListTableViewController: UITableViewController {
     
