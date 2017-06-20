@@ -7,8 +7,8 @@
 //
 
 import UIKit
-import Alamofire
 import RealmSwift
+import Alamofire
 
 class MangaListTableViewController: UITableViewController {
     
@@ -21,8 +21,9 @@ class MangaListTableViewController: UITableViewController {
         mangas = realm.objects(Manga.self).sorted(byKeyPath: "title", ascending: true)
         
         if mangas.isEmpty {
-            fetchMangaList()
-            self.tableView.reloadData()
+            let _ = fetchMangaList().subscribe(onCompleted: {
+                self.tableView.reloadData()
+            })
         }
         
     }
