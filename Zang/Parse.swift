@@ -11,6 +11,7 @@ import Kanna
 
 typealias Title = String
 typealias MangaURL = String
+typealias MangaItemURL = String
 
 func extractMangaList(html: String) -> [(Title, MangaURL)] {
     let a = extractEndMangaList(html: html)
@@ -33,6 +34,16 @@ func extractEndMangaList(html: String) -> [(Title, MangaURL)] {
 func extractSerialMangaList(html: String) -> [(Title, MangaURL)] {
     if let doc = HTML(html: html, encoding: .utf8) {
         return doc.css("#post .contents a.tx-link").map({ (elm) -> (String, String) in
+            return (elm.text!, elm["href"]!)
+        })
+    }
+    
+    return []
+}
+
+func extractMangaItem(html: String) -> [(Title, MangaItemURL)] {
+    if let doc = HTML(html: html, encoding: .utf8) {
+        return doc.css("#post .contents p > a").map({ (elm) -> (String, String) in
             return (elm.text!, elm["href"]!)
         })
     }

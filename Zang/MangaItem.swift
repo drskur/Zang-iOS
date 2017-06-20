@@ -1,8 +1,8 @@
 //
-//  Manga.swift
+//  MangaItem.swift
 //  Zang
 //
-//  Created by drskur on 2017. 6. 19..
+//  Created by drskur on 2017. 6. 20..
 //  Copyright © 2017년 drskur. All rights reserved.
 //
 
@@ -12,30 +12,31 @@ import RxSwift
 import Alamofire
 
 
-class Manga: Object {
+class MangaItem: Object {
+    dynamic var manga: Manga!
     dynamic var title = ""
     dynamic var url = ""
 }
 
-func fetchMangaList() -> Observable<[(Title, MangaURL)]> {
+func fetchMangaItemList(manga: Manga) -> Observable<[(Title, MangaURL)]> {
     let realm = try! Realm()
     
     return Observable.create { (observer) -> Disposable in
-        let req = Alamofire.request("http://zangsisi.net").responseString { (res) in
+        let req = Alamofire.request(manga.url).responseString { (res) in
             res.result
-                .map(extractMangaList)
+                .map(extractMangaItem)
                 .withValue({ (values) in
                     try! realm.write {
                         for (title, url) in values {
-                            realm.add(Manga(value: ["title": title, "url": url]))
+                            realm.add(MangaItem(value: ["title": title, "url": url, "manga": manga]))
                         }
                     }
                     observer.onNext(values)
                     observer.onCompleted()
                 }).withError(observer.onError)
-            }
+        }
         
         return Disposables.create(with: req.cancel)
     }
-
+    
 }
