@@ -48,7 +48,7 @@ class MangaContentsViewController: UIViewController, UIPageViewControllerDataSou
                 self.pageVC.setViewControllers([self.mkViewController(content: self.mangaContent.first!, splitImages: nil, index: 0, secondIndex: 0)], direction: .forward, animated: true, completion: nil)
             })
         } else {
-            pageVC.setViewControllers([mkViewController(content: mangaContent.first!, splitImages: nil, index: 0, secondIndex: 0)], direction: .forward, animated: true, completion: nil)
+            pageVC.setViewControllers([mkViewController(content: mangaContent[self.mangaItem.pageIndex], splitImages: nil, index: self.mangaItem.pageIndex, secondIndex: self.mangaItem.pageSecondIndex)], direction: .forward, animated: true, completion: nil)
         }
         
         self.addChildViewController(pageVC)

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class ContentViewController: UIViewController {
     
@@ -16,7 +17,7 @@ class ContentViewController: UIViewController {
     var pageSecondIndex: Int!
     
     var splitImages: [UIImage]?
-    
+    let realm = try! Realm()
 
     @IBOutlet weak var imageView: UIImageView!
     
@@ -35,6 +36,11 @@ class ContentViewController: UIViewController {
                         self.imageView.image = image
                     }
                 })
+        }
+        
+        try! realm.write {
+            mangaContent.mangaItem.pageIndex = self.pageIndex
+            mangaContent.mangaItem.pageSecondIndex = self.pageSecondIndex
         }
     }
     
