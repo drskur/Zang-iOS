@@ -22,41 +22,47 @@ func extractMangaList(html: String) -> [(Title, MangaURL)] {
 }
 
 func extractEndMangaList(html: String) -> [(Title, MangaURL)] {
-    if let doc = HTML(html: html, encoding: .utf8) {
+    do {
+        let doc = try HTML(html: html, encoding: .utf8)
+        
         return doc.css("#manga-list a").map({ (elm) -> (String, String) in
             return (elm.text!, elm["href"]!)
         })
+    } catch {
+        return []
     }
-    
-    return []
 }
 
 func extractSerialMangaList(html: String) -> [(Title, MangaURL)] {
-    if let doc = HTML(html: html, encoding: .utf8) {
+    do {
+        let doc = try HTML(html: html, encoding: .utf8)
+        
         return doc.css("#post .contents a.tx-link").map({ (elm) -> (String, String) in
             return (elm.text!, elm["href"]!)
         })
+    } catch {
+        return []
     }
-    
-    return []
 }
 
 func extractMangaItem(html: String) -> [(Title, MangaItemURL)] {
-    if let doc = HTML(html: html, encoding: .utf8) {
+    do {
+        let doc = try HTML(html: html, encoding: .utf8)
         return doc.css("#post .contents p > a").map({ (elm) -> (String, String) in
             return (elm.text!, elm["href"]!)
         })
+    } catch {
+        return []
     }
-    
-    return []
 }
 
 func extractMangaContent(html: String) -> [String] {
-    if let doc = HTML(html: html, encoding: .utf8) {
+    do {
+        let doc = try HTML(html: html, encoding: .utf8)
         return doc.css("#post .contents img").map({ (elm) -> String in
             return elm["src"]!
         })
+    } catch {
+        return []
     }
-    
-    return []
 }

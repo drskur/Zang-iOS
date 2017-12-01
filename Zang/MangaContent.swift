@@ -13,8 +13,8 @@ import Alamofire
 
 
 class MangaContent: Object {
-    dynamic var mangaItem: MangaItem!
-    dynamic var imageUrl = ""
+    @objc dynamic var mangaItem: MangaItem!
+    @objc dynamic var imageUrl = ""
 }
 
 func fetchMangaContentsList(mangaItem: MangaItem) -> Observable<[String]> {

@@ -1,4 +1,4 @@
-github "Alamofire/Alamofire" ~> 4.4
-github "tid-kijyun/Kanna" ~> 2.1.0
+github "Alamofire/Alamofire" ~> 4.5
+git "https://github.com/tid-kijyun/Kanna.git" "feature/v4.0.0"
 github "realm/realm-cocoa"
-github "ReactiveX/RxSwift" ~> 3.0
+github "ReactiveX/RxSwift" ~> 4.0
