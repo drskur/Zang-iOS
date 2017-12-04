@@ -18,6 +18,7 @@ class MangaItemListTableViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.hidesBarsOnTap = false
+        self.tableView.reloadData()
     }
 
     override func viewDidLoad() {
@@ -44,10 +45,20 @@ class MangaItemListTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "MangaItemCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "MangaItemCell", for: indexPath) as! MangaItemCell
         
         let item = mangaItems[indexPath.row]
-        cell.textLabel?.text = item.title
+        cell.mangaNameLabel.text = item.title
+        
+        if (item.pageIndex != 0) {
+            cell.setRead(true)
+        }
+        
+        if (item.pageIndex >= item.pages - 1) {
+            cell.setFinish(true)
+        } else {
+            cell.setFinish(false)
+        }
 
         return cell
     }

@@ -19,6 +19,7 @@ class MangaItem: Object {
     @objc dynamic var isMangaDirection = false
     @objc dynamic var pageIndex = 0
     @objc dynamic var pageSecondIndex = 0
+    @objc dynamic var pages = 0
 }
 
 func fetchMangaItemList(manga: Manga) -> Observable<[(Title, MangaURL)]> {

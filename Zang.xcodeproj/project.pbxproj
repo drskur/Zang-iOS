@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F2CDB071FD4DCEE00C30AE4 /* MangaItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2CDB061FD4DCEE00C30AE4 /* MangaItemCell.swift */; };
 		0F580C161EF7C71700ABD0B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F580C151EF7C71700ABD0B0 /* AppDelegate.swift */; };
 		0F580C1B1EF7C71700ABD0B0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F580C191EF7C71700ABD0B0 /* Main.storyboard */; };
 		0F580C1D1EF7C71700ABD0B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0F580C1C1EF7C71700ABD0B0 /* Assets.xcassets */; };
@@ -46,6 +47,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0F2CDB061FD4DCEE00C30AE4 /* MangaItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MangaItemCell.swift; sourceTree = "<group>"; };
 		0F580C121EF7C71700ABD0B0 /* Zang.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Zang.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F580C151EF7C71700ABD0B0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0F580C1A1EF7C71700ABD0B0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -146,6 +148,7 @@
 				0F79BB7A1EF8D6AE006D8C48 /* MangaContentsViewController.swift */,
 				0F79BB7C1EF8D735006D8C48 /* MangaContent.swift */,
 				0F79BB7E1EF8DA02006D8C48 /* ContentViewController.swift */,
+				0F2CDB061FD4DCEE00C30AE4 /* MangaItemCell.swift */,
 			);
 			path = Zang;
 			sourceTree = "<group>";
@@ -346,6 +349,7 @@
 				0FD3192E1EF7F84E0097BF9F /* Parse.swift in Sources */,
 				0F79BB771EF8BCB9006D8C48 /* MangaItemListTableViewController.swift in Sources */,
 				0FD3193C1EF804560097BF9F /* MangaListTableViewController.swift in Sources */,
+				0F2CDB071FD4DCEE00C30AE4 /* MangaItemCell.swift in Sources */,
 				0F79BB791EF8BF17006D8C48 /* MangaItem.swift in Sources */,
 				0F79BB7F1EF8DA02006D8C48 /* ContentViewController.swift in Sources */,
 				0F79BB7D1EF8D735006D8C48 /* MangaContent.swift in Sources */,
@@ -520,6 +524,8 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DB35VSN86K;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -531,6 +537,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = kr.co.rsquare.Zang;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 4.0;
 			};
@@ -541,6 +548,8 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DB35VSN86K;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -552,6 +561,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = kr.co.rsquare.Zang;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 4.0;
 			};

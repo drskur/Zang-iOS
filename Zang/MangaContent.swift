@@ -26,6 +26,8 @@ func fetchMangaContentsList(mangaItem: MangaItem) -> Observable<[String]> {
                 .map(extractMangaContent)
                 .withValue({ (values) in
                     try! realm.write {
+                        mangaItem.pages = values.count
+                        
                         for url in values {
                             realm.add(MangaContent(value: ["imageUrl": url, "mangaItem": mangaItem]))
                         }
