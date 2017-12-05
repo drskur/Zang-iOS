@@ -45,4 +45,5 @@ class MangaItemCell: UITableViewCell {
             readIcon.layer.borderWidth = 0.0
         }
     }
+    
 }

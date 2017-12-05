@@ -52,6 +52,8 @@ class MangaItemListTableViewController: UITableViewController {
         
         if (item.pageIndex != 0) {
             cell.setRead(true)
+        } else {
+            cell.setRead(false)
         }
         
         if (item.pageIndex >= item.pages - 1) {
